@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SabanaResearch.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Parciales</a> &gt; <a href="index.source.html" class="el_package">entities</a> &gt; <span class="el_source">SabanaResearch.java</span></div><h1>SabanaResearch.java</h1><pre class="source lang-java linenums">package entities;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+public class SabanaResearch {
+
+    private List&lt;Group&gt; groups;
+    private List&lt;Summary&gt; summaries;
+    private List&lt;Student&gt; students;
+
+<span class="nc" id="L13">    public SabanaResearch(List&lt;Group&gt; groups) {</span>
+<span class="nc" id="L14">        this.groups = groups;</span>
+<span class="nc" id="L15">        this.summaries = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L16">    }</span>
+
+    public int countOfGroups() {
+<span class="nc" id="L19">        return this.groups.size();</span>
+    }
+
+    public int countOfSummaries() {
+<span class="nc" id="L23">        return this.summaries.size();</span>
+    }
+
+    /**
+     * Create a summary entry in the current date.
+     * - Calculate the count of active projects.
+     *
+     * @return The new Summary entry.
+     */
+    public Summary createSummaryEntry() {
+<span class="nc" id="L33">        int activeProjects = this.groups.stream().map(Group::countActiveProjects).reduce(0, Integer::sum);</span>
+
+<span class="nc" id="L35">        Summary summary = new Summary(activeProjects, LocalDate.now());</span>
+<span class="nc" id="L36">        this.summaries.add(summary);</span>
+
+<span class="nc" id="L38">        return summary;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

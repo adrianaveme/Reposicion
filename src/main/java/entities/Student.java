@@ -20,6 +20,9 @@ public class Student {
 
         Duration d = Duration.ZERO;
 
+        if (this.assignedActivities.isEmpty())
+            throw new SabanaResearchException(SabanaResearchException.BAD_FORMED_STUDENT);
+
         for (Activity a: assignedActivities){
             d = d.plus(a.getDuration());
         }

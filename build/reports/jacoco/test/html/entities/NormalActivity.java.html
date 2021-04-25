@@ -14,26 +14,26 @@ public class NormalActivity extends Activity {
     }
 
     public NormalActivity(String name, String state, Iteration iteration) throws SabanaResearchException {
-<span class="fc" id="L17">        super(name, state, iteration);</span>
-<span class="fc" id="L18">        this.steps = new ArrayList&lt;&gt;();</span>
-<span class="fc" id="L19">    }</span>
+<span class="nc" id="L17">        super(name, state, iteration);</span>
+<span class="nc" id="L18">        this.steps = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L19">    }</span>
 
     public void addStep(Step step)   {
-<span class="fc" id="L22">        this.steps.add(step);</span>
-<span class="fc" id="L23">    }</span>
+<span class="nc" id="L22">        this.steps.add(step);</span>
+<span class="nc" id="L23">    }</span>
 
     @Override
     public Duration getDuration() throws SabanaResearchException{
 
-<span class="fc" id="L28">        Duration d =Duration.ZERO;</span>
+<span class="nc" id="L28">        Duration d =Duration.ZERO;</span>
 
-<span class="pc bpc" id="L30" title="1 of 2 branches missed.">        if (steps.isEmpty())</span>
+<span class="nc bnc" id="L30" title="All 2 branches missed.">        if (steps.isEmpty())</span>
 <span class="nc" id="L31">                throw new SabanaResearchException(SabanaResearchException.BAD_FORMED_NORMAL_ACTIVITY);</span>
 
-<span class="fc bfc" id="L33" title="All 2 branches covered.">        for ( Step s : steps){</span>
-<span class="fc" id="L34">            d = d.plus(s.getDuration());</span>
-<span class="fc" id="L35">        }</span>
-<span class="fc" id="L36">        return d;</span>
+<span class="nc bnc" id="L33" title="All 2 branches missed.">        for ( Step s : steps){</span>
+<span class="nc" id="L34">            d = d.plus(s.getDuration());</span>
+<span class="nc" id="L35">        }</span>
+<span class="nc" id="L36">        return d;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

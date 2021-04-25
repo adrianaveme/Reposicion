@@ -6,8 +6,8 @@ entities/SabanaResearch.java
  entities.SabanaResearch
 entities/Step.java
  entities.Step
-entities/Summary.java
- entities.Summary
+entities/StudentSynthesizer.java
+ entities.StudentSynthesizer
 entities/Activity.java
  entities.Activity
 entities/ISynthesizer.java
@@ -18,15 +18,15 @@ entities/Project.java
  entities.Project
 entities/DocumentedActivity.java
  entities.DocumentedActivity
-entities/NormalActivity.java
- entities.NormalActivity
+entities/ExecutiveSynthesizer.java
+ entities.ExecutiveSynthesizer
 entities/Question.java
  entities.Question
 entities/Student.java
  entities.Student
 entities/Iteration.java
  entities.Iteration
-entities/StudentSynthesizer.java
- entities.StudentSynthesizer
-entities/ExecutiveSynthesizer.java
- entities.ExecutiveSynthesizer
+entities/Summary.java
+ entities.Summary
+entities/NormalActivity.java
+ entities.NormalActivity

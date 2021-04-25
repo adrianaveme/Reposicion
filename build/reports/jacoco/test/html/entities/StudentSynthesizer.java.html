@@ -9,31 +9,31 @@ public class StudentSynthesizer implements ISynthesizer{
     public List &lt;Student&gt; students;
     public ArrayList&lt;String&gt; resume;
 
-<span class="fc" id="L12">    public StudentSynthesizer(List&lt;Student&gt; students) {</span>
-<span class="fc" id="L13">        this.students = students;</span>
-<span class="fc" id="L14">    }</span>
+<span class="nc" id="L12">    public StudentSynthesizer(List&lt;Student&gt; students) {</span>
+<span class="nc" id="L13">        this.students = students;</span>
+<span class="nc" id="L14">    }</span>
 
 
     @Override
     public List &lt;String&gt; synthezise() throws SabanaResearchException {
 
-<span class="fc" id="L20">        resume = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L20">        resume = new ArrayList&lt;&gt;();</span>
 
         Duration d;
         String n;
 
-<span class="fc bfc" id="L25" title="All 2 branches covered.">        for (Student s : this.students){</span>
-<span class="fc" id="L26">            d=s.getActivitiesDuration();</span>
-<span class="fc" id="L27">            n=s.getName();</span>
-<span class="fc" id="L28">            resume.add(&quot;Estudiante: &quot;+n+ &quot;, Duracion: &quot;+ d);</span>
+<span class="nc bnc" id="L25" title="All 2 branches missed.">        for (Student s : this.students){</span>
+<span class="nc" id="L26">            d=s.getActivitiesDuration();</span>
+<span class="nc" id="L27">            n=s.getName();</span>
+<span class="nc" id="L28">            resume.add(&quot;Estudiante: &quot;+n+ &quot;, Duracion: &quot;+ d);</span>
 
-<span class="fc" id="L30">        }</span>
+<span class="nc" id="L30">        }</span>
 
-<span class="fc bfc" id="L32" title="All 2 branches covered.">        for (String r : resume){</span>
-<span class="fc" id="L33">            System.out.println(r);</span>
-<span class="fc" id="L34">        }</span>
+<span class="nc bnc" id="L32" title="All 2 branches missed.">        for (String r : resume){</span>
+<span class="nc" id="L33">            System.out.println(r);</span>
+<span class="nc" id="L34">        }</span>
 
-<span class="fc" id="L36">        return resume;</span>
+<span class="nc" id="L36">        return resume;</span>
 
     }
 }

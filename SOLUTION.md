@@ -59,3 +59,6 @@ Del punto 2 no habría que cambiar nada porque el método getDuration() de activ
 2. ¿Qué es sobre-escritura de métodos? ¿Por qué aplicarla? ¿Cómo impedir que se sobre-escriba un método?.
 
     La sobre-escritura de métodos en java es utilizar utilizar métodos previamente expuestos en nuestro codigo en varios lugares del mismo dónde se requiera una implementación distinta. Se aplica para hacer nuestros proyectos en java más conciso de esta forma un mismo método puede tomar distintas formas depende de lo que se requiera y no hay necesidad de ser redundantes. Para impedir que se sobre escriba un método se pueden incluir la palabra clave final.
+
+## **5. Bonus**
+1. ExecutiveSynthesizer

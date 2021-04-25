@@ -10,13 +10,13 @@ public class Iteration {
     private Project project;
     private List&lt;Activity&gt; activities;
 
-<span class="nc" id="L13">    public Iteration(String objective, Project project) {</span>
-<span class="nc" id="L14">        this.objective = objective;</span>
-<span class="nc" id="L15">        this.project = project;</span>
-<span class="nc" id="L16">        this.activities = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L13">    public Iteration(String objective, Project project) {</span>
+<span class="fc" id="L14">        this.objective = objective;</span>
+<span class="fc" id="L15">        this.project = project;</span>
+<span class="fc" id="L16">        this.activities = new ArrayList&lt;&gt;();</span>
 
-<span class="nc" id="L18">        project.addIteration(this);</span>
-<span class="nc" id="L19">    }</span>
+<span class="fc" id="L18">        project.addIteration(this);</span>
+<span class="fc" id="L19">    }</span>
 
     public void addActivity(Activity activity) {
 <span class="nc" id="L22">        this.activities.add(activity);</span>
@@ -64,9 +64,9 @@ public class Iteration {
 
     public Duration getDuration() throws SabanaResearchException {
 
-<span class="nc" id="L67">        Duration d = Duration.ZERO;</span>
-<span class="nc bnc" id="L68" title="All 2 branches missed.">        if (this.activities.isEmpty())</span>
-<span class="nc" id="L69">            throw new SabanaResearchException(SabanaResearchException.BAD_FORMED_ITERATION);</span>
+<span class="fc" id="L67">        Duration d = Duration.ZERO;</span>
+<span class="pc bpc" id="L68" title="1 of 2 branches missed.">        if (this.activities.isEmpty())</span>
+<span class="fc" id="L69">            throw new SabanaResearchException(SabanaResearchException.BAD_FORMED_ITERATION);</span>
 
 <span class="nc bnc" id="L71" title="All 2 branches missed.">        for (Activity a : this.activities){</span>
 <span class="nc" id="L72">            d=d.plus(a.getDuration());</span>

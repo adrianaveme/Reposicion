@@ -11,24 +11,27 @@ public class Student {
     private Course approved;
     private List &lt;Activity&gt; assignedActivities;
 
-<span class="fc" id="L14">    public Student(String name, List&lt;Activity&gt; assignedActivities) {</span>
-<span class="fc" id="L15">        this.name = name;</span>
-<span class="fc" id="L16">        this.assignedActivities = assignedActivities;</span>
-<span class="fc" id="L17">    }</span>
+<span class="nc" id="L14">    public Student(String name, List&lt;Activity&gt; assignedActivities) {</span>
+<span class="nc" id="L15">        this.name = name;</span>
+<span class="nc" id="L16">        this.assignedActivities = assignedActivities;</span>
+<span class="nc" id="L17">    }</span>
 
     public Duration getActivitiesDuration() throws SabanaResearchException {
 
-<span class="fc" id="L21">        Duration d = Duration.ZERO;</span>
+<span class="nc" id="L21">        Duration d = Duration.ZERO;</span>
 
-<span class="fc bfc" id="L23" title="All 2 branches covered.">        for (Activity a: assignedActivities){</span>
-<span class="fc" id="L24">            d = d.plus(a.getDuration());</span>
-<span class="fc" id="L25">        }</span>
+<span class="nc bnc" id="L23" title="All 2 branches missed.">        if (this.assignedActivities.isEmpty())</span>
+<span class="nc" id="L24">            throw new SabanaResearchException(SabanaResearchException.BAD_FORMED_STUDENT);</span>
 
-<span class="fc" id="L27">        return d;</span>
+<span class="nc bnc" id="L26" title="All 2 branches missed.">        for (Activity a: assignedActivities){</span>
+<span class="nc" id="L27">            d = d.plus(a.getDuration());</span>
+<span class="nc" id="L28">        }</span>
+
+<span class="nc" id="L30">        return d;</span>
     }
 
     public String getName() {
-<span class="fc" id="L31">        return this.name;</span>
+<span class="nc" id="L34">        return this.name;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

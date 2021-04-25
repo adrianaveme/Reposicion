@@ -19,32 +19,32 @@ public class DocumentedActivity extends Activity {
     }
 
     public DocumentedActivity(String name, String state, Iteration iteration, NormalActivity activity) throws SabanaResearchException {
-<span class="fc" id="L22">        super(name, state, iteration);</span>
-<span class="fc" id="L23">        this.activity = activity;</span>
-<span class="fc" id="L24">        this.questions = new ArrayList&lt;&gt;();</span>
-<span class="fc" id="L25">    }</span>
+<span class="nc" id="L22">        super(name, state, iteration);</span>
+<span class="nc" id="L23">        this.activity = activity;</span>
+<span class="nc" id="L24">        this.questions = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L25">    }</span>
 
     public void addQuestion(Question question) {
-<span class="fc" id="L28">        this.questions.add(question);</span>
-<span class="fc" id="L29">    }</span>
+<span class="nc" id="L28">        this.questions.add(question);</span>
+<span class="nc" id="L29">    }</span>
 
     @Override
     public Duration getDuration() throws SabanaResearchException {
 
 
-<span class="pc bpc" id="L35" title="1 of 2 branches missed.">        if(questions.isEmpty())</span>
+<span class="nc bnc" id="L35" title="All 2 branches missed.">        if(questions.isEmpty())</span>
 <span class="nc" id="L36">                throw new SabanaResearchException(SabanaResearchException.BAD_FORMED_DOCUMENTED_ACTIVITY);</span>
-<span class="pc bpc" id="L37" title="1 of 2 branches missed.">        if(this.activity == null)</span>
+<span class="nc bnc" id="L37" title="All 2 branches missed.">        if(this.activity == null)</span>
 <span class="nc" id="L38">                throw new SabanaResearchException(SabanaResearchException.BAD_FORMED_DOCUMENTED_ACTIVITY_WITHOUT_NORMAL_QUESTION);</span>
 
-<span class="fc" id="L40">        Duration d = this.activity.getDuration();</span>
-<span class="fc bfc" id="L41" title="All 2 branches covered.">        for (Question q : questions){</span>
-<span class="fc" id="L42">            d = d.plus(q.getDedication());</span>
-<span class="fc" id="L43">        }</span>
+<span class="nc" id="L40">        Duration d = this.activity.getDuration();</span>
+<span class="nc bnc" id="L41" title="All 2 branches missed.">        for (Question q : questions){</span>
+<span class="nc" id="L42">            d = d.plus(q.getDedication());</span>
+<span class="nc" id="L43">        }</span>
 
         //duration2 = activity.getDuration();
 
-<span class="fc" id="L47">        return d;</span>
+<span class="nc" id="L47">        return d;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

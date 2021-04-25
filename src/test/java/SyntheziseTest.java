@@ -7,7 +7,7 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.util.*;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class SyntheziseTest {
 
@@ -19,7 +19,7 @@ public class SyntheziseTest {
     }
 
     @Test
-    @DisplayName("GIVEN sabana research WHEN open an iteration THEN Count open activities")
+    @DisplayName("GIVEN a list of iterations WHEN needed their summary THEN dislpay objective and duration")
     public void shouldSyntheziseIterations() throws SabanaResearchException {
         Group group = new Group(faker.team().name());
         Project wellFormedProject = new Project(faker.team().name(), LocalDate.now().minusDays(10), LocalDate.now().plusDays(10), group);
@@ -41,9 +41,25 @@ public class SyntheziseTest {
 
         assertNotNull(es.synthezise());
     }
+    @Test
+    @DisplayName("GIVEN a iteration without activities WHEN get duration THEN get SabanaResearchException")
+    public void shouldNotSyntheziseIterations() throws SabanaResearchException {
+        Group group = new Group(faker.team().name());
+        Project wellFormedProject = new Project(faker.team().name(), LocalDate.now().minusDays(10), LocalDate.now().plusDays(10), group);
+        Iteration iteration = new Iteration(faker.team().name(), wellFormedProject);
+        Iteration iteration2 = new Iteration(faker.team().name(), wellFormedProject);
+        List <Iteration> iterations = new ArrayList<>();
+
+        iterations.add(iteration);
+        iterations.add(iteration2);
+        ExecutiveSynthesizer es = new ExecutiveSynthesizer(iterations);
+
+        SabanaResearchException exception = assertThrows(SabanaResearchException.class, es::synthezise);
+        assertEquals(SabanaResearchException.BAD_FORMED_ITERATION, exception.getMessage());
+    }
 
     @Test
-    @DisplayName("GIVEN sabana research WHEN open an iteration THEN Count open activities")
+    @DisplayName("GIVEN A list of students WHEN needed a summary THEN display their name and duration")
     public void shouldSyntheziseStudents() throws SabanaResearchException {
 
         List <Activity> assignedActivities = new ArrayList<>();
@@ -68,6 +84,24 @@ public class SyntheziseTest {
         assignedActivities.add(documentedActivity);
 
         assertNotNull(ss.synthezise());
+    }
+
+    @Test
+    @DisplayName("GIVEN A list of students WHEN needed a summary THEN display their name and duration")
+    public void shouldNotSyntheziseStudents() throws SabanaResearchException {
+
+        List <Activity> assignedActivities = new ArrayList<>();
+
+        Student s1 = new Student("Adriana Velasquez", assignedActivities);
+        Student s2 = new Student("Juvenal Urbino", assignedActivities);
+        List <Student> students = new ArrayList<>();
+
+        students.add(s1);
+        students.add(s2);
+        StudentSynthesizer ss = new StudentSynthesizer(students);
+
+        SabanaResearchException exception = assertThrows(SabanaResearchException.class, ss::synthezise);
+        assertEquals(SabanaResearchException.BAD_FORMED_STUDENT, exception.getMessage());
     }
 }
 

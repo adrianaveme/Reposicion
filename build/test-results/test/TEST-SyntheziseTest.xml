@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="SyntheziseTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-04-25T22:05:25" hostname="DESKTOP-JVFQ71N" time="0.044">
+<testsuite name="SyntheziseTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-04-25T22:33:11" hostname="DESKTOP-JVFQ71N" time="0.039">
   <properties/>
-  <testcase name="GIVEN sabana research WHEN open an iteration THEN Count open activities" classname="SyntheziseTest" time="0.044"/>
-  <system-out><![CDATA[Estudiante: Adriana VelÃ¡squez, Duracion: PT72H
-Estudiante: Juvenal Urbino, Duracion: PT72H
-]]></system-out>
+  <testcase name="GIVEN a iteration without activities WHEN get duration THEN get SabanaResearchException" classname="SyntheziseTest" time="0.039"/>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -28,7 +28,11 @@ public class ExecutiveSynthesizer implements ISynthesizer{
         for (Iteration i : this.iterations){
             d=i.getDuration();
             obj = i.getObjective();
-            resume.add("Objetivo: "+obj+ " Duracion: "+d);
+            resume.add("Objetivo: "+obj+ ". Duracion: "+d);
+        }
+
+        for (String r : resume){
+            System.out.println(r);
         }
 
         return resume;

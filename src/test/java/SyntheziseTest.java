@@ -40,7 +40,6 @@ public class SyntheziseTest {
         documentedActivity.addQuestion(new Question(Question.EASY_QUESTION, faker.team().name(), Duration.ofDays(1)));
 
         assertNotNull(es.synthezise());
-        System.out.print(es.synthezise());
     }
 
     @Test
@@ -49,7 +48,7 @@ public class SyntheziseTest {
 
         List <Activity> assignedActivities = new ArrayList<>();
 
-        Student s1 = new Student("Adriana Velásquez", assignedActivities);
+        Student s1 = new Student("Adriana Velasquez", assignedActivities);
         Student s2 = new Student("Juvenal Urbino", assignedActivities);
         List <Student> students = new ArrayList<>();
 
@@ -69,7 +68,6 @@ public class SyntheziseTest {
         assignedActivities.add(documentedActivity);
 
         assertNotNull(ss.synthezise());
-        System.out.print(ss.synthezise());
     }
 }
 

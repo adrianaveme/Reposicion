@@ -13,19 +13,19 @@ public class Project {
     private Group group;
     private List&lt;Iteration&gt; iterations;
 
-<span class="fc" id="L16">    public Project(String name, LocalDate dateInit, LocalDate dateEnd, Group group) {</span>
-<span class="fc" id="L17">        this.name = name;</span>
-<span class="fc" id="L18">        this.dateInit = dateInit;</span>
-<span class="fc" id="L19">        this.dateEnd = dateEnd;</span>
-<span class="fc" id="L20">        this.group = group;</span>
-<span class="fc" id="L21">        this.iterations = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L16">    public Project(String name, LocalDate dateInit, LocalDate dateEnd, Group group) {</span>
+<span class="nc" id="L17">        this.name = name;</span>
+<span class="nc" id="L18">        this.dateInit = dateInit;</span>
+<span class="nc" id="L19">        this.dateEnd = dateEnd;</span>
+<span class="nc" id="L20">        this.group = group;</span>
+<span class="nc" id="L21">        this.iterations = new ArrayList&lt;&gt;();</span>
 
-<span class="fc" id="L23">        group.addProject(this);</span>
-<span class="fc" id="L24">    }</span>
+<span class="nc" id="L23">        group.addProject(this);</span>
+<span class="nc" id="L24">    }</span>
 
     public void addIteration(Iteration iteration) {
-<span class="fc" id="L27">        this.iterations.add(iteration);</span>
-<span class="fc" id="L28">    }</span>
+<span class="nc" id="L27">        this.iterations.add(iteration);</span>
+<span class="nc" id="L28">    }</span>
 
     public Duration getDuration() throws SabanaResearchException {
 

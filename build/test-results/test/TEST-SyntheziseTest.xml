@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="SyntheziseTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-04-25T19:02:55" hostname="DESKTOP-JVFQ71N" time="0.516">
+<testsuite name="SyntheziseTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-04-25T21:52:36" hostname="DESKTOP-JVFQ71N" time="0.484">
   <properties/>
-  <testcase name="GIVEN sabana research WHEN open an iteration THEN Count open activities" classname="SyntheziseTest" time="0.084"/>
-  <testcase name="GIVEN sabana research WHEN open an iteration THEN Count open activities" classname="SyntheziseTest" time="0.016"/>
-  <system-out><![CDATA[[Objetivo: Washington werewolvesDuration: PT72H][Objetivo: California pigsDuration: PT72H][Estudiante: Adriana VelÃ¡squez, DuraciÃ³n: PT72H, Estudiante: Juvenal Urbino, DuraciÃ³n: PT72H]]]></system-out>
+  <testcase name="GIVEN sabana research WHEN open an iteration THEN Count open activities" classname="SyntheziseTest" time="0.111"/>
+  <testcase name="GIVEN sabana research WHEN open an iteration THEN Count open activities" classname="SyntheziseTest" time="0.011"/>
+  <system-out><![CDATA[[Objetivo: Louisiana worshipers Duracion: PT72H, Objetivo: Iowa birds Duracion: PT24H][Estudiante: Adriana VelÃ¡squez, Duracion: PT72H, Estudiante: Juvenal Urbino, Duracion: PT72H]]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

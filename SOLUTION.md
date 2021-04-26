@@ -24,7 +24,11 @@
 ![image](https://user-images.githubusercontent.com/79488147/115906572-4dc26080-a42d-11eb-9e1a-3fdaff52ea81.png)
 
 ## **2. Diseñando**
+
+StudentSyntheziser()
 ![image](https://github.com/adrianaveme/Parcial-II---A.Velasquez/blob/master/diagrams/Secuencia1.png)
+
+ExecutiveSyntheziser()
 ![image](https://github.com/adrianaveme/Parcial-II---A.Velasquez/blob/master/diagrams/Secuencia2.png)
 ## **3. Extendiendo**
 
@@ -79,7 +83,7 @@ Del punto 2 no habría que cambiar nada porque el método getDuration() de activ
     La sobre-escritura de métodos en java es utilizar utilizar métodos previamente expuestos en nuestro codigo en varios lugares del mismo dónde se requiera una implementación distinta. Se aplica para hacer nuestros proyectos en java más conciso de esta forma un mismo método puede tomar distintas formas depende de lo que se requiera y no hay necesidad de ser redundantes. Para impedir que se sobre escriba un método se pueden incluir la palabra clave final.
 
 ## **5. Bonus**
-1. ExecutiveSynthesizer
+**ISynthesizerTest**
 ![image](https://user-images.githubusercontent.com/79488147/116015669-b2cdb000-a5ff-11eb-8e71-fdd60214b69b.png)
 
 * Summarize(ExecutiveSyntheziser) displays resume as follows:
@@ -88,7 +92,7 @@ Del punto 2 no habría que cambiar nada porque el método getDuration() de activ
 * summarize(StudentSyntheziser) displays resume as follows:
 ![image](https://user-images.githubusercontent.com/79488147/116015816-456e4f00-a600-11eb-8a4b-3f18707483ab.png)
 
-*nota* Se agregaron dos excepciones a Sabana Research Exception para casos de estudantes.
+*nota:* Se agregaron dos excepciones a Sabana Research Exception para casos de estudantes.
 
 
 ---
@@ -97,20 +101,20 @@ Del punto 2 no habría que cambiar nada porque el método getDuration() de activ
 # PARCIAL I
 (Lo unico que hacía falta era el bono)
 
-## **1. Memoria*
+## **1. Memoria**
 
 ![image](https://user-images.githubusercontent.com/79488147/110189115-05eb6980-7dec-11eb-94da-02989fd0baf2.png)
 
 
-## **2. Código*
+## **2. Código**
 
 ![image](https://user-images.githubusercontent.com/79488147/116016723-2cb36880-a603-11eb-8d32-536d94ca8be2.png)
 
 
-## **3. Diseño*
+## **3. Diseño**
 ![image](https://user-images.githubusercontent.com/79488147/111008995-6b95a380-8360-11eb-87a7-7d96d763651c.png)
 
-## **4. Conceptos*
+## **4. Conceptos**
 
 ## Encapsulamiento
 
@@ -132,7 +136,7 @@ Se aplica ya que no es necesario mostrar como esta hecho un método afuera de la
 
 Se implementa en java al almacenar toda una unidad lógica en un solo componente dentro de una clase. Se utiliza un modificador de acceso privado por ejemplo.
 
-## **5. Bonus*
+## **5. Bonus**
 
 (Como se muestra en código las pruebas pasan).
 

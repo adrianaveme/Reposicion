@@ -62,3 +62,16 @@ Del punto 2 no habría que cambiar nada porque el método getDuration() de activ
 
 ## **5. Bonus**
 1. ExecutiveSynthesizer
+![image](https://user-images.githubusercontent.com/79488147/116015669-b2cdb000-a5ff-11eb-8e71-fdd60214b69b.png)
+
+* Summarize(ExecutiveSyntheziser) displays resume as follows:
+![image](https://user-images.githubusercontent.com/79488147/116015722-ef99a700-a5ff-11eb-9f9d-36289ca31cda.png)
+
+* summarize(StudentSyntheziser) displays resume as follows:
+![image](https://user-images.githubusercontent.com/79488147/116015816-456e4f00-a600-11eb-8a4b-3f18707483ab.png)
+
+*nota* Se agregaron dos excepciones a Sabana Research Exception para casos de estudantes.
+
+
+
+

@@ -51,6 +51,8 @@ Del punto 2 no habría que cambiar nada porque el método getDuration() de activ
 
 **Teniendo en cuenta los cambios necesarios ¿Que fue bueno y que fue malo de su diseño?**
 
+Principalmente haría las cosas de otra manera para simplificar el codigo.
+
 
 
 

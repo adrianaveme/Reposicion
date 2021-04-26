@@ -27,11 +27,12 @@
 
 StudentSyntheziser()
 
-![image](https://github.com/adrianaveme/Parcial-II---A.Velasquez/blob/master/diagrams/Secuencia1.png)
+![image](https://user-images.githubusercontent.com/79488147/116018099-e7913580-a606-11eb-862e-ffd0692d10da.png)
+
 
 ExecutiveSyntheziser()
 
-![image](https://github.com/adrianaveme/Parcial-II---A.Velasquez/blob/master/diagrams/Secuencia2.png)
+![image](https://user-images.githubusercontent.com/79488147/116018066-d47e6580-a606-11eb-9bbc-fbb75ab2e1ac.png)
 
 ## **3. Extendiendo**
 

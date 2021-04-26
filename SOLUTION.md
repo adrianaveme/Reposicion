@@ -6,12 +6,18 @@
 ![image](https://user-images.githubusercontent.com/79488147/116016029-fb399d80-a600-11eb-89c4-2d0f507050a8.png)
 
 ##SONARQUBE
-![image](https://user-images.githubusercontent.com/79488147/116016152-62575200-a601-11eb-9c51-9785d8cf576c.png)
+![image](https://user-images.githubusercontent.com/79488147/116016248-af3b2880-a601-11eb-9e31-d9137ab06970.png)
 
-![image](https://user-images.githubusercontent.com/79488147/116016172-769b4f00-a601-11eb-94bd-75c93e531bd6.png)
+![image](https://user-images.githubusercontent.com/79488147/116016267-bc581780-a601-11eb-9244-922ba90de162.png)
+
+![image](https://user-images.githubusercontent.com/79488147/116016296-cd088d80-a601-11eb-9d8a-d465574ae15f.png)
+
+![image](https://user-images.githubusercontent.com/79488147/116016313-e1e52100-a601-11eb-8cbc-9d9373f3a55f.png)
 
 
-
+---
+---
+# PARCIAL II
 
 ## **1. Implementando**
 
@@ -85,5 +91,8 @@ Del punto 2 no habría que cambiar nada porque el método getDuration() de activ
 *nota* Se agregaron dos excepciones a Sabana Research Exception para casos de estudantes.
 
 
+---
+---
 
+# PARCIAL I
 

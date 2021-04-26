@@ -41,6 +41,10 @@ Diagrama de Clases
 
 ## **3. Extendiendo**
 
+**
+
+![image](https://user-images.githubusercontent.com/79488147/116020909-cd5a5600-a60c-11eb-9f77-bac4c7aa0ad4.png)
+
 
 **De los diseños resultantes del punto I y II, ¿Qué debe cambiar? ¿Qué no debe cambiar?. Justifique su respuesta.**
 

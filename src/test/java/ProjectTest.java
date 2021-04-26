@@ -11,7 +11,7 @@ import java.util.stream.IntStream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class ProjectTest {
+class ProjectTest {
 
     private static Faker faker;
 
@@ -23,13 +23,13 @@ public class ProjectTest {
     private Project badFormedProject5; // Project where a documented activity hasn't normal activity
     private Project badFormedProject6; // Project where a documented activity with normal activity hasn't steps
 
-    public ProjectTest() {
+    ProjectTest() {
 
         faker = new Faker(new Locale("en-US"));
     }
 
     @BeforeEach
-    public void setup() throws SabanaResearchException{
+    void setup() throws SabanaResearchException{
 
         setupWellFormedProject();
         setupBadFormedProject1();
@@ -42,7 +42,7 @@ public class ProjectTest {
 
     @Test
     @DisplayName("GIVEN a well formed project WHEN get duration THEN return the project duration")
-    public void shouldGetDurationWhenWellFormedProject() {
+    void shouldGetDurationWhenWellFormedProject() {
 
         try {
             Duration duration = wellFormedProject.getDuration();
@@ -54,7 +54,7 @@ public class ProjectTest {
 
     @Test
     @DisplayName("GIVEN a project without iterations WHEN get duration THEN get SabanaResearchException")
-    public void shouldThrowsSabanaResearchExceptionWhenProjectWithoutIterations() {
+    void shouldThrowsSabanaResearchExceptionWhenProjectWithoutIterations() {
 
         SabanaResearchException exception = assertThrows(SabanaResearchException.class, () -> badFormedProject1.getDuration());
         assertEquals(SabanaResearchException.BAD_FORMED_PROJECT, exception.getMessage());
@@ -62,7 +62,7 @@ public class ProjectTest {
 
     @Test
     @DisplayName("GIVEN a iteration without activities WHEN get duration THEN get SabanaResearchException")
-    public void shouldThrowsSabanaResearchExceptionWhenIterationWithoutActivities() {
+    void shouldThrowsSabanaResearchExceptionWhenIterationWithoutActivities() {
 
         SabanaResearchException exception = assertThrows(SabanaResearchException.class, () -> badFormedProject2.getDuration());
         assertEquals(SabanaResearchException.BAD_FORMED_ITERATION, exception.getMessage());
@@ -70,7 +70,7 @@ public class ProjectTest {
 
     @Test
     @DisplayName("GIVEN a normal activity without steps WHEN get duration THEN get SabanaResearchException")
-    public void shouldThrowsSabanaResearchExceptionWhenNormalActivityWithputSteps() {
+    void shouldThrowsSabanaResearchExceptionWhenNormalActivityWithputSteps() {
 
         SabanaResearchException exception = assertThrows(SabanaResearchException.class, () -> badFormedProject3.getDuration());
         assertEquals(SabanaResearchException.BAD_FORMED_NORMAL_ACTIVITY, exception.getMessage());
@@ -78,7 +78,7 @@ public class ProjectTest {
 
     @Test
     @DisplayName("GIVEN a documented activity without questions WHEN get duration THEN get SabanaResearchException")
-    public void shouldThrowsSabanaResearchExceptionWhenDocumentedActivityWithoutQuestions() {
+    void shouldThrowsSabanaResearchExceptionWhenDocumentedActivityWithoutQuestions() {
 
         SabanaResearchException exception = assertThrows(SabanaResearchException.class, () -> badFormedProject4.getDuration());
         assertEquals(SabanaResearchException.BAD_FORMED_DOCUMENTED_ACTIVITY, exception.getMessage());
@@ -86,7 +86,7 @@ public class ProjectTest {
 
     @Test
     @DisplayName("GIVEN a documented activity without normal activity WHEN get duration THEN get SabanaResearchException")
-    public void shouldThrowsSabanaResearchExceptionWhenDocumentedActivityWithoutNormalActivity() {
+    void shouldThrowsSabanaResearchExceptionWhenDocumentedActivityWithoutNormalActivity() {
 
         SabanaResearchException exception = assertThrows(SabanaResearchException.class, () -> badFormedProject5.getDuration());
         assertEquals(SabanaResearchException.BAD_FORMED_DOCUMENTED_ACTIVITY_WITHOUT_NORMAL_QUESTION, exception.getMessage());
@@ -94,7 +94,7 @@ public class ProjectTest {
 
     @Test
     @DisplayName("GIVEN a documented activity with normal activity without steps WHEN get duration THEN get SabanaResearchException")
-    public void shouldThrowsSabanaResearchExceptionWhenDocumentedActivityWithNormalActivityWithoutSteps() {
+    void shouldThrowsSabanaResearchExceptionWhenDocumentedActivityWithNormalActivityWithoutSteps() {
 
         SabanaResearchException exception = assertThrows(SabanaResearchException.class, () -> badFormedProject6.getDuration());
         assertEquals(SabanaResearchException.BAD_FORMED_NORMAL_ACTIVITY, exception.getMessage());

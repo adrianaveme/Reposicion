@@ -5,20 +5,18 @@ import java.util.List;
 
 public class Group {
 
-    private String name;
-    private List&lt;Project&gt; projects;
+    private final List&lt;Project&gt; projects;
 
-<span class="fc" id="L11">    public Group(String name) {</span>
-<span class="fc" id="L12">        this.name = name;</span>
-<span class="fc" id="L13">        this.projects = new ArrayList&lt;&gt;();</span>
-<span class="fc" id="L14">    }</span>
+<span class="fc" id="L10">    public Group(String name) {</span>
+<span class="fc" id="L11">        this.projects = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L12">    }</span>
 
     public void addProject(Project plan) {
-<span class="fc" id="L17">        this.projects.add(plan);</span>
-<span class="fc" id="L18">    }</span>
+<span class="fc" id="L15">        this.projects.add(plan);</span>
+<span class="fc" id="L16">    }</span>
 
     public int countActiveProjects() {
-<span class="nc" id="L21">        return(int) this.projects.stream().map(Project::isActive).filter(b -&gt; b).count();</span>
+<span class="fc" id="L19">        return(int) this.projects.stream().map(Project::isActive).filter(b -&gt; b).count();</span>
     }
 
 }

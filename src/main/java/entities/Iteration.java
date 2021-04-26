@@ -6,13 +6,11 @@ import java.util.List;
 
 public class Iteration {
 
-    private String objective;
-    private Project project;
-    private List<Activity> activities;
+    private final String objective;
+    private final List<Activity> activities;
 
     public Iteration(String objective, Project project) {
         this.objective = objective;
-        this.project = project;
         this.activities = new ArrayList<>();
 
         project.addIteration(this);
@@ -31,20 +29,10 @@ public class Iteration {
             }
         }
 
-        /*for (int i = 0; i< this.activities.size(); i++){
-            if(this.activities.get(i).isActive()){
-                count++;
-            }
-        }*/
-
-        //Counts number of activities. Map converts activity into boolean.
-        //filter function is also used. Se hace un flujo de actividades luego un mapa un filtro y una cuenta
-
         return (int) this.activities.stream()
                 .map(Activity::isActive)
                 .filter(b -> b)
                 .count();
-        //return count;
     }
 
     public int countClosedActivities() {
@@ -56,10 +44,6 @@ public class Iteration {
                 .map(Activity::isClosed)
                 .filter(b -> b)
                 .count();
-    }
-
-    public List<Activity> getActivities() {
-        return activities;
     }
 
     public Duration getDuration() throws SabanaResearchException {

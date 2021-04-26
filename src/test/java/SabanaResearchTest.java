@@ -11,21 +11,21 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class SabanaResearchTest {
+class SabanaResearchTest {
 
     private SabanaResearch sabanaResearch;
     private final List<Group> groups;
     private final List<Project> projects;
     private final List<Iteration> iterations;
 
-    public SabanaResearchTest() {
+    SabanaResearchTest() {
         this.groups = new ArrayList<>();
         this.projects = new ArrayList<>();
         this.iterations = new ArrayList<>();
     }
 
     @BeforeEach
-    public void setup() throws SabanaResearchException {
+    void setup() throws SabanaResearchException {
 
         // Create groups
         groups.add(new Group("Medical Science Group"));
@@ -61,35 +61,35 @@ public class SabanaResearchTest {
         sabanaResearch = new SabanaResearch(groups);
         // Assert count of plans
         assertEquals(sabanaResearch.countOfGroups(), groups.size(), "The default count of groups");
-        assertEquals(sabanaResearch.countOfSummaries(), 0, "The default count of summaries");
+        assertEquals(0, sabanaResearch.countOfSummaries(), "The default count of summaries");
     }
 
     @Test
     @DisplayName("GIVEN sabana research WHEN create summary THEN a new summary is created")
-    public void shouldCreateSummary() {
+    void shouldCreateSummary() {
         Summary summary = sabanaResearch.createSummaryEntry();
 
         assertNotNull(summary, "The summary should be created.");
         assertNotNull(summary.getDate(), "Validate summary date.");
-        assertEquals(summary.getActiveProjects(), 1, "Validate number of active projects");
-        assertEquals(sabanaResearch.countOfSummaries(), 1, "The default count of summaries");
+        assertEquals(1, summary.getActiveProjects(), "Validate number of active projects");
+        assertEquals(1, sabanaResearch.countOfSummaries(), "The default count of summaries");
     }
 
     @Test
     @DisplayName("GIVEN sabana research WHEN open a project by dates and create summary THEN a new summary is created")
-    public void shouldCreateSummaryForOpenProjects() {
+    void shouldCreateSummaryForOpenProjects() {
         this.projects.get(2).setDateEnd(LocalDate.now().plusDays(1));
         Summary summary = sabanaResearch.createSummaryEntry();
 
         assertNotNull(summary, "The summary should be created.");
         assertNotNull(summary.getDate(), "Validate summary date.");
-        assertEquals(summary.getActiveProjects(), 2, "Validate number of active projects");
-        assertEquals(sabanaResearch.countOfSummaries(), 1, "The default count of summaries");
+        assertEquals(2, summary.getActiveProjects(), "Validate number of active projects");
+        assertEquals(1, sabanaResearch.countOfSummaries(), "The default count of summaries");
     }
 
     @Test
     @DisplayName("GIVEN sabana research WHEN open an iteration THEN Count closed activities")
-    public void shouldCountClosedActivities() throws SabanaResearchException {
+    void shouldCountClosedActivities() throws SabanaResearchException {
 
         Iteration I = new Iteration("1. Understand Virus", projects.get(0));
         new NormalActivity("Invest", Activity.CLOSED_STATE, I);
@@ -102,7 +102,7 @@ public class SabanaResearchTest {
 
     @Test
     @DisplayName("GIVEN sabana research WHEN open an iteration THEN Count open activities")
-    public void shouldCountOpenActivities() throws SabanaResearchException {
+    void shouldCountOpenActivities() throws SabanaResearchException {
 
         Iteration J = new Iteration("1. Understand Virus", projects.get(0));
         new NormalActivity("Investigate DNA", Activity.CLOSED_STATE, J);

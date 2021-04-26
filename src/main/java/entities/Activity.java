@@ -14,7 +14,7 @@ public abstract class Activity  {
     private Iteration iteration;
 
 
-    public Activity(String name, String state, Iteration iteration) throws SabanaResearchException {
+    protected Activity(String name, String state, Iteration iteration) {
         this.name = name;
         this.state = state;
 
@@ -38,11 +38,6 @@ public abstract class Activity  {
         return !isActive();
     }
 
-    /**
-     * Get the duration of the activity.
-     *
-     * @return
-     */
     public abstract Duration getDuration() throws SabanaResearchException;
 
 }

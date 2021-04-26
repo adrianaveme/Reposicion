@@ -8,10 +8,6 @@ public class NormalActivity extends Activity {
 
     private List<Step> steps;
 
-    @Override
-    public boolean isActive() {
-        return super.isActive();
-    }
 
     public NormalActivity(String name, String state, Iteration iteration) throws SabanaResearchException {
         super(name, state, iteration);

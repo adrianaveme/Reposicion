@@ -7,94 +7,79 @@ import java.util.List;
 
 public class Project {
 
-    private String name;
-    private LocalDate dateInit;
     private LocalDate dateEnd;
-    private Group group;
     private List&lt;Iteration&gt; iterations;
     private List&lt;Student&gt; students;
-    public ISynthesizer es;
 
-<span class="fc" id="L18">    public Project(String name, LocalDate dateInit, LocalDate dateEnd, Group group) {</span>
-<span class="fc" id="L19">        this.name = name;</span>
-<span class="fc" id="L20">        this.dateInit = dateInit;</span>
-<span class="fc" id="L21">        this.dateEnd = dateEnd;</span>
-<span class="fc" id="L22">        this.group = group;</span>
-<span class="fc" id="L23">        this.iterations = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L14">    public Project(String name, LocalDate dateInit, LocalDate dateEnd, Group group) {</span>
+<span class="fc" id="L15">        this.dateEnd = dateEnd;</span>
+<span class="fc" id="L16">        this.iterations = new ArrayList&lt;&gt;();</span>
 
-<span class="fc" id="L25">        group.addProject(this);</span>
+<span class="fc" id="L18">        group.addProject(this);</span>
+<span class="fc" id="L19">    }</span>
+
+<span class="fc" id="L21">    public Project(List&lt;Iteration&gt; iterations) {</span>
+<span class="fc" id="L22">        this.iterations = iterations;</span>
+<span class="fc" id="L23">    }</span>
+<span class="fc" id="L24">    public Project(List&lt;Student&gt; students, Group group) {</span>
+<span class="fc" id="L25">        this.students = students;</span>
 <span class="fc" id="L26">    }</span>
-
-<span class="fc" id="L28">    public Project(List&lt;Iteration&gt; iterations) {</span>
-<span class="fc" id="L29">        this.iterations = iterations;</span>
-<span class="fc" id="L30">    }</span>
-<span class="fc" id="L31">    public Project(List&lt;Student&gt; students, Group group) {</span>
-<span class="fc" id="L32">        this.students = students;</span>
-<span class="fc" id="L33">    }</span>
 
 
     public void addIteration(Iteration iteration) {
-<span class="fc" id="L37">        this.iterations.add(iteration);</span>
-<span class="fc" id="L38">    }</span>
+<span class="fc" id="L30">        this.iterations.add(iteration);</span>
+<span class="fc" id="L31">    }</span>
 
     public Duration getDuration() throws SabanaResearchException {
 
-<span class="nc bnc" id="L42" title="All 2 branches missed.">        if (this.iterations.isEmpty())</span>
-<span class="nc" id="L43">            throw new SabanaResearchException(SabanaResearchException.BAD_FORMED_PROJECT);</span>
+<span class="fc bfc" id="L35" title="All 2 branches covered.">        if (this.iterations.isEmpty())</span>
+<span class="fc" id="L36">            throw new SabanaResearchException(SabanaResearchException.BAD_FORMED_PROJECT);</span>
 
-<span class="nc" id="L45">        Duration d = Duration.ZERO;</span>
-<span class="nc bnc" id="L46" title="All 2 branches missed.">        for (Iteration i : this.iterations){</span>
-<span class="nc" id="L47">            d=d.plus(i.getDuration());</span>
-<span class="nc" id="L48">        }</span>
-<span class="nc" id="L49">        return d;</span>
+<span class="fc" id="L38">        Duration d = Duration.ZERO;</span>
+<span class="fc bfc" id="L39" title="All 2 branches covered.">        for (Iteration i : this.iterations){</span>
+<span class="fc" id="L40">            d=d.plus(i.getDuration());</span>
+<span class="fc" id="L41">        }</span>
+<span class="fc" id="L42">        return d;</span>
     }
 
     public boolean isActive() {
         boolean isActive;
 
-<span class="nc bnc" id="L55" title="All 2 branches missed.">        if(LocalDate.now().isAfter(this.dateEnd)){</span>
-<span class="nc" id="L56">            isActive = false;</span>
+<span class="fc bfc" id="L48" title="All 2 branches covered.">        if(LocalDate.now().isAfter(this.dateEnd)){</span>
+<span class="fc" id="L49">            isActive = false;</span>
         }
         else{
-<span class="nc" id="L59">            int openActivities = this.countOpenActivities();</span>
-<span class="nc bnc" id="L60" title="All 2 branches missed.">            isActive = openActivities &gt; 0;</span>
+<span class="fc" id="L52">            int openActivities = this.countOpenActivities();</span>
+<span class="fc bfc" id="L53" title="All 2 branches covered.">            isActive = openActivities &gt; 0;</span>
         }
 
-<span class="nc" id="L63">        return isActive;</span>
+<span class="fc" id="L56">        return isActive;</span>
     }
 
 
     public int countOpenActivities(){
-        /*int count =0;
-        for (Iteration i : this.iterations ){
-            count += i.countOpenActivities();
-        }
-        return count;*/
 
-        //Declara variable inicial cero y a y b
-        //se  aplica a + b, se va reduciendo ese resultado en variable inicial 0
-
-<span class="nc" id="L77">        return this.iterations</span>
-<span class="nc" id="L78">                .stream()</span>
-<span class="nc" id="L79">                .map(Iteration::countOpenActivities)</span>
-<span class="nc" id="L80">                .reduce(0, Integer::sum);</span>
+<span class="fc" id="L62">        return this.iterations</span>
+<span class="fc" id="L63">                .stream()</span>
+<span class="fc" id="L64">                .map(Iteration::countOpenActivities)</span>
+<span class="fc" id="L65">                .reduce(0, Integer::sum);</span>
     }
 
 
     public List &lt;String&gt; summarize(ISynthesizer es) throws SabanaResearchException {
-<span class="fc" id="L85">            return es.synthezise();</span>
+<span class="fc" id="L70">            return es.synthezise();</span>
     }
 
     public void setDateEnd(LocalDate dateEnd) {
-<span class="nc" id="L89">        this.dateEnd = dateEnd;</span>
-<span class="nc" id="L90">    }</span>
+<span class="fc" id="L74">        this.dateEnd = dateEnd;</span>
+<span class="fc" id="L75">    }</span>
 
     public List&lt;Iteration&gt; getIterations() {
-<span class="fc" id="L93">        return this.iterations;</span>
+<span class="fc" id="L78">        return this.iterations;</span>
     }
 
     public List&lt;Student&gt; getStudents() {
-<span class="fc" id="L97">        return students;</span>
+<span class="fc" id="L82">        return students;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

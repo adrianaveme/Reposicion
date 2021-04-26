@@ -9,16 +9,11 @@ public class DocumentedActivity extends Activity {
     private NormalActivity activity;
     private List<Question> questions;
 
-    public DocumentedActivity(String name, String state, Iteration iteration) throws SabanaResearchException {
+    public DocumentedActivity(String name, String state, Iteration iteration) {
         super(name,state,iteration);
     }
 
-    @Override
-    public boolean isActive() {
-        return super.isActive();
-    }
-
-    public DocumentedActivity(String name, String state, Iteration iteration, NormalActivity activity) throws SabanaResearchException {
+    public DocumentedActivity(String name, String state, Iteration iteration, NormalActivity activity) {
         super(name, state, iteration);
         this.activity = activity;
         this.questions = new ArrayList<>();
@@ -41,8 +36,6 @@ public class DocumentedActivity extends Activity {
         for (Question q : questions){
             d = d.plus(q.getDedication());
         }
-
-        //duration2 = activity.getDuration();
 
         return d;
     }

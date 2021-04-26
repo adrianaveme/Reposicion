@@ -6,37 +6,36 @@ import java.util.List;
 
 public class ExecutiveSynthesizer implements ISynthesizer{
 
-    public ArrayList &lt;String&gt; resume;
     private final Project project;
 
-<span class="fc" id="L12">    public ExecutiveSynthesizer(Project project) {</span>
-<span class="fc" id="L13">        this.project = project;</span>
-<span class="fc" id="L14">    }</span>
+<span class="fc" id="L11">    public ExecutiveSynthesizer(Project project) {</span>
+<span class="fc" id="L12">        this.project = project;</span>
+<span class="fc" id="L13">    }</span>
 
     @Override
     public List &lt;String&gt; synthezise() throws SabanaResearchException {
 
         String obj;
 
-<span class="fc" id="L21">        resume = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L20">        List&lt;String&gt; resume = new ArrayList&lt;&gt;();</span>
 
-<span class="pc bpc" id="L23" title="1 of 2 branches missed.">        if (project.getIterations().isEmpty())</span>
-<span class="nc" id="L24">            throw new SabanaResearchException(SabanaResearchException.BAD_FORMED_PROJECT);</span>
+<span class="pc bpc" id="L22" title="1 of 2 branches missed.">        if (project.getIterations().isEmpty())</span>
+<span class="nc" id="L23">            throw new SabanaResearchException(SabanaResearchException.BAD_FORMED_PROJECT);</span>
 
         Duration d;
 
-<span class="fc bfc" id="L28" title="All 2 branches covered.">        for (Iteration i : project.getIterations()){</span>
+<span class="fc bfc" id="L27" title="All 2 branches covered.">        for (Iteration i : project.getIterations()){</span>
 
-<span class="fc" id="L30">            d=i.getDuration();</span>
-<span class="fc" id="L31">            obj = i.getObjective();</span>
-<span class="fc" id="L32">            resume.add(&quot;Objetivo: &quot;+obj+ &quot;. Duracion: &quot;+d);</span>
-<span class="fc" id="L33">        }</span>
+<span class="fc" id="L29">            d=i.getDuration();</span>
+<span class="fc" id="L30">            obj = i.getObjective();</span>
+<span class="fc" id="L31">            resume.add(&quot;Objetivo: &quot;+obj+ &quot;. Duracion: &quot;+d);</span>
+<span class="fc" id="L32">        }</span>
 
-<span class="fc bfc" id="L35" title="All 2 branches covered.">        for (String r : resume){</span>
-<span class="fc" id="L36">            System.out.println(r);</span>
-<span class="fc" id="L37">        }</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">        for (String r : resume){</span>
+<span class="fc" id="L35">            System.out.print(r);</span>
+<span class="fc" id="L36">        }</span>
 
-<span class="fc" id="L39">        return resume;</span>
+<span class="fc" id="L38">        return resume;</span>
 
     }
 }

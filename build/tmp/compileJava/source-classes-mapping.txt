@@ -1,7 +1,5 @@
 entities/Group.java
  entities.Group
-entities/Course.java
- entities.Course
 entities/SabanaResearch.java
  entities.SabanaResearch
 entities/Step.java
@@ -16,8 +14,8 @@ entities/SabanaResearchException.java
  entities.SabanaResearchException
 entities/Project.java
  entities.Project
-entities/DocumentedActivity.java
- entities.DocumentedActivity
+entities/NormalActivity.java
+ entities.NormalActivity
 entities/ExecutiveSynthesizer.java
  entities.ExecutiveSynthesizer
 entities/Question.java
@@ -28,5 +26,5 @@ entities/Iteration.java
  entities.Iteration
 entities/Summary.java
  entities.Summary
-entities/NormalActivity.java
- entities.NormalActivity
+entities/DocumentedActivity.java
+ entities.DocumentedActivity

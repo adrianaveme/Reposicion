@@ -4,7 +4,7 @@ import java.time.Duration;
 
 public class Step {
 
-    private String objective;
+    private final String objective;
     private Duration duration;
 
     public Step(String objective, Duration duration) {

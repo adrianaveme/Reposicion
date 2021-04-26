@@ -9,18 +9,18 @@ import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class SyntheziseTest {
+class SyntheziseTest {
 
     private static Faker faker;
 
-    public SyntheziseTest() {
+    SyntheziseTest() {
 
         faker = new Faker(new Locale("en-US"));
     }
 
     @Test
     @DisplayName("GIVEN a project with a list of iterations WHEN needed their summary THEN dislpay objective and duration")
-    public void shouldSyntheziseIterations() throws SabanaResearchException {
+    void shouldSyntheziseIterations() throws SabanaResearchException {
         List <Iteration> iterations = new ArrayList<>();
         Project wellFormedProject = new Project(iterations);
         ExecutiveSynthesizer es = new ExecutiveSynthesizer(wellFormedProject);
@@ -43,7 +43,7 @@ public class SyntheziseTest {
     }
     @Test
     @DisplayName("GIVEN a project with iterations without activities WHEN get duration THEN get SabanaResearchException")
-    public void shouldNotSyntheziseIterations(){
+    void shouldNotSyntheziseIterations(){
         Group group = new Group(faker.team().name());
         Project wellFormedProject = new Project(faker.team().name(), LocalDate.now().minusDays(10), LocalDate.now().plusDays(10), group);
         Iteration iteration = new Iteration(faker.team().name(), wellFormedProject);
@@ -60,7 +60,7 @@ public class SyntheziseTest {
 
     @Test
     @DisplayName("GIVEN A list of students WHEN needed a summary THEN display their name and duration")
-    public void shouldSyntheziseStudents() throws SabanaResearchException {
+    void shouldSyntheziseStudents() throws SabanaResearchException {
 
 
 
@@ -93,7 +93,7 @@ public class SyntheziseTest {
 
     @Test
     @DisplayName("GIVEN A student without assignedActivities WHEN needed a summary THEN Get Sabana Reseaarch Exception")
-    public void shouldNotSyntheziseStudents() {
+    void shouldNotSyntheziseStudents() {
 
         List <Activity> assignedActivities = new ArrayList<>();
 

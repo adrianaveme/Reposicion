@@ -4,12 +4,8 @@ import java.time.Duration;
 import java.util.List;
 
 public class Student {
-    private int code;
-    private String name;
-    private String lastName;
-    private String email;
-    private Course approved;
-    private List <Activity> assignedActivities;
+    private final String name;
+    private final List <Activity> assignedActivities;
 
     public Student(String name, List<Activity> assignedActivities) {
         this.name = name;

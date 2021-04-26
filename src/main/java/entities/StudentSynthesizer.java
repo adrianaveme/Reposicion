@@ -6,8 +6,7 @@ import java.util.List;
 
 public class StudentSynthesizer implements ISynthesizer{
 
-    public List <Student> students;
-    public ArrayList<String> resume;
+    protected List<String> resume;
     private final Project project;
 
     public StudentSynthesizer(Project project) {

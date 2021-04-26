@@ -6,7 +6,6 @@ import java.util.List;
 
 public class ExecutiveSynthesizer implements ISynthesizer{
 
-    public ArrayList <String> resume;
     private final Project project;
 
     public ExecutiveSynthesizer(Project project) {
@@ -18,7 +17,7 @@ public class ExecutiveSynthesizer implements ISynthesizer{
 
         String obj;
 
-        resume = new ArrayList<>();
+        List<String> resume = new ArrayList<>();
 
         if (project.getIterations().isEmpty())
             throw new SabanaResearchException(SabanaResearchException.BAD_FORMED_PROJECT);
@@ -33,7 +32,7 @@ public class ExecutiveSynthesizer implements ISynthesizer{
         }
 
         for (String r : resume){
-            System.out.println(r);
+            System.out.print(r);
         }
 
         return resume;

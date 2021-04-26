@@ -14,7 +14,7 @@ public abstract class Activity  {
     private Iteration iteration;
 
 
-<span class="fc" id="L17">    public Activity(String name, String state, Iteration iteration) throws SabanaResearchException {</span>
+<span class="fc" id="L17">    protected Activity(String name, String state, Iteration iteration) {</span>
 <span class="fc" id="L18">        this.name = name;</span>
 <span class="fc" id="L19">        this.state = state;</span>
 
@@ -31,18 +31,13 @@ public abstract class Activity  {
      */
     public boolean isActive()  {
 
-<span class="nc bnc" id="L34" title="All 4 branches missed.">        return this.state.equals(ACTIVE_STATE) || this.state.equals(PENDING_STATE);</span>
+<span class="fc bfc" id="L34" title="All 4 branches covered.">        return this.state.equals(ACTIVE_STATE) || this.state.equals(PENDING_STATE);</span>
     }
     public boolean isClosed()  {
 
-<span class="nc bnc" id="L38" title="All 2 branches missed.">        return !isActive();</span>
+<span class="fc bfc" id="L38" title="All 2 branches covered.">        return !isActive();</span>
     }
 
-    /**
-     * Get the duration of the activity.
-     *
-     * @return
-     */
     public abstract Duration getDuration() throws SabanaResearchException;
 
 }

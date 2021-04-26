@@ -7,19 +7,12 @@ import java.util.List;
 
 public class Project {
 
-    private String name;
-    private LocalDate dateInit;
     private LocalDate dateEnd;
-    private Group group;
     private List<Iteration> iterations;
     private List<Student> students;
-    public ISynthesizer es;
 
     public Project(String name, LocalDate dateInit, LocalDate dateEnd, Group group) {
-        this.name = name;
-        this.dateInit = dateInit;
         this.dateEnd = dateEnd;
-        this.group = group;
         this.iterations = new ArrayList<>();
 
         group.addProject(this);
@@ -65,14 +58,6 @@ public class Project {
 
 
     public int countOpenActivities(){
-        /*int count =0;
-        for (Iteration i : this.iterations ){
-            count += i.countOpenActivities();
-        }
-        return count;*/
-
-        //Declara variable inicial cero y a y b
-        //se  aplica a + b, se va reduciendo ese resultado en variable inicial 0
 
         return this.iterations
                 .stream()

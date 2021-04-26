@@ -1,5 +1,17 @@
 # SOLUTION
-Adriana Maria Velásquez Medina
+**Adriana Maria Velásquez Medina*+
+
+#RESUMEN
+##Pruebas de Parcial I y Parcial II con bonus integradas en un mismo projecto pasan con exito.
+![image](https://user-images.githubusercontent.com/79488147/116016029-fb399d80-a600-11eb-89c4-2d0f507050a8.png)
+
+##SONARQUBE
+![image](https://user-images.githubusercontent.com/79488147/116016152-62575200-a601-11eb-9c51-9785d8cf576c.png)
+
+![image](https://user-images.githubusercontent.com/79488147/116016172-769b4f00-a601-11eb-94bd-75c93e531bd6.png)
+
+
+
 
 ## **1. Implementando**
 

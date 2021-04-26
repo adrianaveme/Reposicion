@@ -12,6 +12,8 @@ public class Project {
     private LocalDate dateEnd;
     private Group group;
     private List<Iteration> iterations;
+    private List<Student> students;
+    public ISynthesizer es;
 
     public Project(String name, LocalDate dateInit, LocalDate dateEnd, Group group) {
         this.name = name;
@@ -22,6 +24,14 @@ public class Project {
 
         group.addProject(this);
     }
+
+    public Project(List<Iteration> iterations) {
+        this.iterations = iterations;
+    }
+    public Project(List<Student> students, Group group) {
+        this.students = students;
+    }
+
 
     public void addIteration(Iteration iteration) {
         this.iterations.add(iteration);
@@ -39,9 +49,6 @@ public class Project {
         return d;
     }
 
-    //////////////////
-
-
     public boolean isActive() {
         boolean isActive;
 
@@ -55,7 +62,6 @@ public class Project {
 
         return isActive;
     }
-
 
 
     public int countOpenActivities(){
@@ -75,8 +81,8 @@ public class Project {
     }
 
 
-    public List <String> summarize(ISynthesizer s) throws SabanaResearchException {
-        return s.synthezise();
+    public List <String> summarize(ISynthesizer es) throws SabanaResearchException {
+            return es.synthezise();
     }
 
     public void setDateEnd(LocalDate dateEnd) {
@@ -84,6 +90,10 @@ public class Project {
     }
 
     public List<Iteration> getIterations() {
-        return iterations;
+        return this.iterations;
+    }
+
+    public List<Student> getStudents() {
+        return students;
     }
 }

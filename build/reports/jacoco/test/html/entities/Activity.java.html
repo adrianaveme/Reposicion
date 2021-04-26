@@ -14,15 +14,15 @@ public abstract class Activity  {
     private Iteration iteration;
 
 
-<span class="nc" id="L17">    public Activity(String name, String state, Iteration iteration) throws SabanaResearchException {</span>
-<span class="nc" id="L18">        this.name = name;</span>
-<span class="nc" id="L19">        this.state = state;</span>
+<span class="fc" id="L17">    public Activity(String name, String state, Iteration iteration) throws SabanaResearchException {</span>
+<span class="fc" id="L18">        this.name = name;</span>
+<span class="fc" id="L19">        this.state = state;</span>
 
-<span class="nc bnc" id="L21" title="All 2 branches missed.">        if (iteration != null) {</span>
-<span class="nc" id="L22">            this.iteration = iteration;</span>
-<span class="nc" id="L23">            this.iteration.addActivity(this);</span>
+<span class="fc bfc" id="L21" title="All 2 branches covered.">        if (iteration != null) {</span>
+<span class="fc" id="L22">            this.iteration = iteration;</span>
+<span class="fc" id="L23">            this.iteration.addActivity(this);</span>
         }
-<span class="nc" id="L25">    }</span>
+<span class="fc" id="L25">    }</span>
 
     /**
      * Evaluate if an activity is active.

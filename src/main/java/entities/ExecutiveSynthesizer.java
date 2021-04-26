@@ -6,11 +6,11 @@ import java.util.List;
 
 public class ExecutiveSynthesizer implements ISynthesizer{
 
-    public List <Iteration> iterations;
     public ArrayList <String> resume;
+    private final Project project;
 
-    public ExecutiveSynthesizer(List<Iteration> iterations) {
-        this.iterations = iterations;
+    public ExecutiveSynthesizer(Project project) {
+        this.project = project;
     }
 
     @Override
@@ -20,12 +20,12 @@ public class ExecutiveSynthesizer implements ISynthesizer{
 
         resume = new ArrayList<>();
 
-        if (this.iterations.isEmpty())
+        if (project.getIterations().isEmpty())
             throw new SabanaResearchException(SabanaResearchException.BAD_FORMED_PROJECT);
 
         Duration d;
 
-        for (Iteration i : this.iterations){
+        for (Iteration i : project.getIterations()){
 
             d=i.getDuration();
             obj = i.getObjective();

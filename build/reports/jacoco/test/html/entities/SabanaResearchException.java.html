@@ -3,6 +3,7 @@
 public class SabanaResearchException extends Exception {
 
     public static final String BAD_FORMED_PROJECT = &quot;The project is bad formed, it hasn't iterations.&quot;;
+    static final String BAD_FORMED_SPROJECT = &quot;The project is bad formed, it doesnt have students.&quot;;
     public static final String BAD_FORMED_ITERATION = &quot;The iteration is bad formed, it hasn't activities.&quot;;
     public static final String BAD_FORMED_NORMAL_ACTIVITY = &quot;The normal activity is bad formed, it hasn't steps.&quot;;
     public static final String BAD_FORMED_DOCUMENTED_ACTIVITY = &quot;The documented activity is bad formed, it hasn't questions.&quot;;
@@ -10,7 +11,7 @@ public class SabanaResearchException extends Exception {
     public static final String BAD_FORMED_STUDENT = &quot;The student, doesnt have assignedActivities.&quot;;
 
     public SabanaResearchException(String message) {
-<span class="fc" id="L13">        super(message);</span>
-<span class="fc" id="L14">    }</span>
+<span class="fc" id="L14">        super(message);</span>
+<span class="fc" id="L15">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

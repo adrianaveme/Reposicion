@@ -19,17 +19,17 @@ public class SyntheziseTest {
     }
 
     @Test
-    @DisplayName("GIVEN a list of iterations WHEN needed their summary THEN dislpay objective and duration")
+    @DisplayName("GIVEN a project with a list of iterations WHEN needed their summary THEN dislpay objective and duration")
     public void shouldSyntheziseIterations() throws SabanaResearchException {
-        Group group = new Group(faker.team().name());
-        Project wellFormedProject = new Project(faker.team().name(), LocalDate.now().minusDays(10), LocalDate.now().plusDays(10), group);
+        List <Iteration> iterations = new ArrayList<>();
+        Project wellFormedProject = new Project(iterations);
+        ExecutiveSynthesizer es = new ExecutiveSynthesizer(wellFormedProject);
+
         Iteration iteration = new Iteration(faker.team().name(), wellFormedProject);
         Iteration iteration2 = new Iteration(faker.team().name(), wellFormedProject);
-        List <Iteration> iterations = new ArrayList<>();
 
         iterations.add(iteration);
         iterations.add(iteration2);
-        ExecutiveSynthesizer es = new ExecutiveSynthesizer(iterations);
 
         NormalActivity normalActivity = new NormalActivity(faker.team().name(), Activity.ACTIVE_STATE, iteration);
         normalActivity.addStep(new Step(faker.team().name(), Duration.ofDays(1)));
@@ -39,11 +39,11 @@ public class SyntheziseTest {
         DocumentedActivity documentedActivity = new DocumentedActivity(faker.team().name(), Activity.ACTIVE_STATE, iteration, activity);
         documentedActivity.addQuestion(new Question(Question.EASY_QUESTION, faker.team().name(), Duration.ofDays(1)));
 
-        assertNotNull(es.synthezise());
+        assertNotNull(wellFormedProject.summarize(es));
     }
     @Test
-    @DisplayName("GIVEN a iteration without activities WHEN get duration THEN get SabanaResearchException")
-    public void shouldNotSyntheziseIterations() throws SabanaResearchException {
+    @DisplayName("GIVEN a project with iterations without activities WHEN get duration THEN get SabanaResearchException")
+    public void shouldNotSyntheziseIterations(){
         Group group = new Group(faker.team().name());
         Project wellFormedProject = new Project(faker.team().name(), LocalDate.now().minusDays(10), LocalDate.now().plusDays(10), group);
         Iteration iteration = new Iteration(faker.team().name(), wellFormedProject);
@@ -52,7 +52,7 @@ public class SyntheziseTest {
 
         iterations.add(iteration);
         iterations.add(iteration2);
-        ExecutiveSynthesizer es = new ExecutiveSynthesizer(iterations);
+        ExecutiveSynthesizer es = new ExecutiveSynthesizer(wellFormedProject);
 
         SabanaResearchException exception = assertThrows(SabanaResearchException.class, es::synthezise);
         assertEquals(SabanaResearchException.BAD_FORMED_ITERATION, exception.getMessage());
@@ -62,6 +62,8 @@ public class SyntheziseTest {
     @DisplayName("GIVEN A list of students WHEN needed a summary THEN display their name and duration")
     public void shouldSyntheziseStudents() throws SabanaResearchException {
 
+
+
         List <Activity> assignedActivities = new ArrayList<>();
 
         Student s1 = new Student("Adriana Velasquez", assignedActivities);
@@ -70,7 +72,10 @@ public class SyntheziseTest {
 
         students.add(s1);
         students.add(s2);
-        StudentSynthesizer ss = new StudentSynthesizer(students);
+
+        Group group = new Group(faker.team().name());
+        Project wellFormedProject = new Project(students, group);
+        StudentSynthesizer ss = new StudentSynthesizer(wellFormedProject);
 
         NormalActivity normalActivity = new NormalActivity(faker.team().name(), Activity.ACTIVE_STATE, null);
         normalActivity.addStep(new Step(faker.team().name(), Duration.ofDays(1)));
@@ -83,12 +88,12 @@ public class SyntheziseTest {
         assignedActivities.add(normalActivity);
         assignedActivities.add(documentedActivity);
 
-        assertNotNull(ss.synthezise());
+        assertNotNull(wellFormedProject.summarize(ss));
     }
 
     @Test
-    @DisplayName("GIVEN A list of students WHEN needed a summary THEN display their name and duration")
-    public void shouldNotSyntheziseStudents() throws SabanaResearchException {
+    @DisplayName("GIVEN A student without assignedActivities WHEN needed a summary THEN Get Sabana Reseaarch Exception")
+    public void shouldNotSyntheziseStudents() {
 
         List <Activity> assignedActivities = new ArrayList<>();
 
@@ -98,7 +103,10 @@ public class SyntheziseTest {
 
         students.add(s1);
         students.add(s2);
-        StudentSynthesizer ss = new StudentSynthesizer(students);
+        Group group = new Group(faker.team().name());
+        Project project = new Project(students, group);
+
+        StudentSynthesizer ss = new StudentSynthesizer(project);
 
         SabanaResearchException exception = assertThrows(SabanaResearchException.class, ss::synthezise);
         assertEquals(SabanaResearchException.BAD_FORMED_STUDENT, exception.getMessage());

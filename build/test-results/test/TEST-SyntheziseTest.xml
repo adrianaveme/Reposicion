@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="SyntheziseTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-04-25T22:33:11" hostname="DESKTOP-JVFQ71N" time="0.039">
+<testsuite name="SyntheziseTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-04-26T00:06:34" hostname="DESKTOP-JVFQ71N" time="0.515">
   <properties/>
-  <testcase name="GIVEN a iteration without activities WHEN get duration THEN get SabanaResearchException" classname="SyntheziseTest" time="0.039"/>
-  <system-out><![CDATA[]]></system-out>
+  <testcase name="GIVEN a project with a list of iterations WHEN needed their summary THEN dislpay objective and duration" classname="SyntheziseTest" time="0.05"/>
+  <testcase name="GIVEN a project with iterations without activities WHEN get duration THEN get SabanaResearchException" classname="SyntheziseTest" time="0.015"/>
+  <testcase name="GIVEN A student without assignedActivities WHEN needed a summary THEN Get Sabana Reseaarch Exception" classname="SyntheziseTest" time="0.004"/>
+  <testcase name="GIVEN A list of students WHEN needed a summary THEN display their name and duration" classname="SyntheziseTest" time="0.005"/>
+  <system-out><![CDATA[Objetivo: Ohio black cats. Duracion: PT72H
+Objetivo: Missouri lycanthropes. Duracion: PT24H
+Objetivo: Ohio black cats. Duracion: PT72H
+Objetivo: Missouri lycanthropes. Duracion: PT24H
+Estudiante: Adriana Velasquez, Duracion: PT72H
+Estudiante: Juvenal Urbino, Duracion: PT72H
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

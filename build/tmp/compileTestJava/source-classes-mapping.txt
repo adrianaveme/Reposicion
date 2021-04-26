@@ -1,6 +1,6 @@
 SabanaResearchTest.java
  SabanaResearchTest
-ProjectTest.java
- ProjectTest
 SyntheziseTest.java
  SyntheziseTest
+ProjectTest.java
+ ProjectTest

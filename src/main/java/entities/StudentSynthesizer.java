@@ -8,9 +8,10 @@ public class StudentSynthesizer implements ISynthesizer{
 
     public List <Student> students;
     public ArrayList<String> resume;
+    private final Project project;
 
-    public StudentSynthesizer(List<Student> students) {
-        this.students = students;
+    public StudentSynthesizer(Project project) {
+        this.project = project;
     }
 
 
@@ -22,7 +23,10 @@ public class StudentSynthesizer implements ISynthesizer{
         Duration d;
         String n;
 
-        for (Student s : this.students){
+        if (project.getStudents().isEmpty())
+            throw new SabanaResearchException(SabanaResearchException.BAD_FORMED_SPROJECT);
+
+        for (Student s : project.getStudents()){
             d=s.getActivitiesDuration();
             n=s.getName();
             resume.add("Estudiante: "+n+ ", Duracion: "+ d);

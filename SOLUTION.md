@@ -26,10 +26,13 @@
 ## **2. Diseñando**
 
 StudentSyntheziser()
+
 ![image](https://github.com/adrianaveme/Parcial-II---A.Velasquez/blob/master/diagrams/Secuencia1.png)
 
 ExecutiveSyntheziser()
+
 ![image](https://github.com/adrianaveme/Parcial-II---A.Velasquez/blob/master/diagrams/Secuencia2.png)
+
 ## **3. Extendiendo**
 
 

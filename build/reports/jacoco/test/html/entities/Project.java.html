@@ -18,12 +18,12 @@ public class Project {
 <span class="fc" id="L18">        group.addProject(this);</span>
 <span class="fc" id="L19">    }</span>
 
-<span class="fc" id="L21">    public Project(List&lt;Iteration&gt; iterations) {</span>
-<span class="fc" id="L22">        this.iterations = iterations;</span>
-<span class="fc" id="L23">    }</span>
-<span class="fc" id="L24">    public Project(List&lt;Student&gt; students, Group group) {</span>
-<span class="fc" id="L25">        this.students = students;</span>
-<span class="fc" id="L26">    }</span>
+<span class="nc" id="L21">    public Project(List&lt;Iteration&gt; iterations) {</span>
+<span class="nc" id="L22">        this.iterations = iterations;</span>
+<span class="nc" id="L23">    }</span>
+<span class="nc" id="L24">    public Project(List&lt;Student&gt; students, Group group) {</span>
+<span class="nc" id="L25">        this.students = students;</span>
+<span class="nc" id="L26">    }</span>
 
 
     public void addIteration(Iteration iteration) {
@@ -32,14 +32,14 @@ public class Project {
 
     public Duration getDuration() throws SabanaResearchException {
 
-<span class="fc bfc" id="L35" title="All 2 branches covered.">        if (this.iterations.isEmpty())</span>
-<span class="fc" id="L36">            throw new SabanaResearchException(SabanaResearchException.BAD_FORMED_PROJECT);</span>
+<span class="nc bnc" id="L35" title="All 2 branches missed.">        if (this.iterations.isEmpty())</span>
+<span class="nc" id="L36">            throw new SabanaResearchException(SabanaResearchException.BAD_FORMED_PROJECT);</span>
 
-<span class="fc" id="L38">        Duration d = Duration.ZERO;</span>
-<span class="fc bfc" id="L39" title="All 2 branches covered.">        for (Iteration i : this.iterations){</span>
-<span class="fc" id="L40">            d=d.plus(i.getDuration());</span>
-<span class="fc" id="L41">        }</span>
-<span class="fc" id="L42">        return d;</span>
+<span class="nc" id="L38">        Duration d = Duration.ZERO;</span>
+<span class="nc bnc" id="L39" title="All 2 branches missed.">        for (Iteration i : this.iterations){</span>
+<span class="nc" id="L40">            d=d.plus(i.getDuration());</span>
+<span class="nc" id="L41">        }</span>
+<span class="nc" id="L42">        return d;</span>
     }
 
     public boolean isActive() {
@@ -67,7 +67,7 @@ public class Project {
 
 
     public List &lt;String&gt; summarize(ISynthesizer es) throws SabanaResearchException {
-<span class="fc" id="L70">            return es.synthezise();</span>
+<span class="nc" id="L70">            return es.synthezise();</span>
     }
 
     public void setDateEnd(LocalDate dateEnd) {
@@ -75,11 +75,11 @@ public class Project {
 <span class="fc" id="L75">    }</span>
 
     public List&lt;Iteration&gt; getIterations() {
-<span class="fc" id="L78">        return this.iterations;</span>
+<span class="nc" id="L78">        return this.iterations;</span>
     }
 
     public List&lt;Student&gt; getStudents() {
-<span class="fc" id="L82">        return students;</span>
+<span class="nc" id="L82">        return students;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

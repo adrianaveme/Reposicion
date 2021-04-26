@@ -14,8 +14,8 @@ entities/SabanaResearchException.java
  entities.SabanaResearchException
 entities/Project.java
  entities.Project
-entities/NormalActivity.java
- entities.NormalActivity
+entities/DocumentedActivity.java
+ entities.DocumentedActivity
 entities/ExecutiveSynthesizer.java
  entities.ExecutiveSynthesizer
 entities/Question.java
@@ -26,5 +26,5 @@ entities/Iteration.java
  entities.Iteration
 entities/Summary.java
  entities.Summary
-entities/DocumentedActivity.java
- entities.DocumentedActivity
+entities/NormalActivity.java
+ entities.NormalActivity

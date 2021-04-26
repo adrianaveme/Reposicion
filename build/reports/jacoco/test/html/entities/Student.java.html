@@ -7,27 +7,27 @@ public class Student {
     private final String name;
     private final List &lt;Activity&gt; assignedActivities;
 
-<span class="fc" id="L10">    public Student(String name, List&lt;Activity&gt; assignedActivities) {</span>
-<span class="fc" id="L11">        this.name = name;</span>
-<span class="fc" id="L12">        this.assignedActivities = assignedActivities;</span>
-<span class="fc" id="L13">    }</span>
+<span class="nc" id="L10">    public Student(String name, List&lt;Activity&gt; assignedActivities) {</span>
+<span class="nc" id="L11">        this.name = name;</span>
+<span class="nc" id="L12">        this.assignedActivities = assignedActivities;</span>
+<span class="nc" id="L13">    }</span>
 
     public Duration getActivitiesDuration() throws SabanaResearchException {
 
-<span class="fc" id="L17">        Duration d = Duration.ZERO;</span>
+<span class="nc" id="L17">        Duration d = Duration.ZERO;</span>
 
-<span class="fc bfc" id="L19" title="All 2 branches covered.">        if (this.assignedActivities.isEmpty())</span>
-<span class="fc" id="L20">            throw new SabanaResearchException(SabanaResearchException.BAD_FORMED_STUDENT);</span>
+<span class="nc bnc" id="L19" title="All 2 branches missed.">        if (this.assignedActivities.isEmpty())</span>
+<span class="nc" id="L20">            throw new SabanaResearchException(SabanaResearchException.BAD_FORMED_STUDENT);</span>
 
-<span class="fc bfc" id="L22" title="All 2 branches covered.">        for (Activity a: assignedActivities){</span>
-<span class="fc" id="L23">            d = d.plus(a.getDuration());</span>
-<span class="fc" id="L24">        }</span>
+<span class="nc bnc" id="L22" title="All 2 branches missed.">        for (Activity a: assignedActivities){</span>
+<span class="nc" id="L23">            d = d.plus(a.getDuration());</span>
+<span class="nc" id="L24">        }</span>
 
-<span class="fc" id="L26">        return d;</span>
+<span class="nc" id="L26">        return d;</span>
     }
 
     public String getName() {
-<span class="fc" id="L30">        return this.name;</span>
+<span class="nc" id="L30">        return this.name;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

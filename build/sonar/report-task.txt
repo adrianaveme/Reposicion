@@ -2,5 +2,5 @@ projectKey=lol
 serverUrl=http://localhost:9000
 serverVersion=8.8.0.42792
 dashboardUrl=http://localhost:9000/dashboard?id=lol
-ceTaskId=AXkLoewITZcMZXx2-4b5
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AXkLoewITZcMZXx2-4b5
+ceTaskId=AXkLsm2MTZcMZXx2-4b6
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXkLsm2MTZcMZXx2-4b6

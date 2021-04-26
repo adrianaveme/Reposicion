@@ -48,19 +48,19 @@ public class Iteration {
 
     public Duration getDuration() throws SabanaResearchException {
 
-<span class="fc" id="L51">        Duration d = Duration.ZERO;</span>
-<span class="fc bfc" id="L52" title="All 2 branches covered.">        if (this.activities.isEmpty())</span>
-<span class="fc" id="L53">            throw new SabanaResearchException(SabanaResearchException.BAD_FORMED_ITERATION);</span>
+<span class="nc" id="L51">        Duration d = Duration.ZERO;</span>
+<span class="nc bnc" id="L52" title="All 2 branches missed.">        if (this.activities.isEmpty())</span>
+<span class="nc" id="L53">            throw new SabanaResearchException(SabanaResearchException.BAD_FORMED_ITERATION);</span>
 
-<span class="fc bfc" id="L55" title="All 2 branches covered.">        for (Activity a : this.activities){</span>
-<span class="fc" id="L56">            d=d.plus(a.getDuration());</span>
-<span class="fc" id="L57">        }</span>
+<span class="nc bnc" id="L55" title="All 2 branches missed.">        for (Activity a : this.activities){</span>
+<span class="nc" id="L56">            d=d.plus(a.getDuration());</span>
+<span class="nc" id="L57">        }</span>
 
-<span class="fc" id="L59">        return d;</span>
+<span class="nc" id="L59">        return d;</span>
     }
 
     public String getObjective() {
-<span class="fc" id="L63">        return this.objective;</span>
+<span class="nc" id="L63">        return this.objective;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

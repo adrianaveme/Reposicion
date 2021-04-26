@@ -9,34 +9,30 @@ public class StudentSynthesizer implements ISynthesizer{
     protected List&lt;String&gt; resume;
     private final Project project;
 
-<span class="fc" id="L12">    public StudentSynthesizer(Project project) {</span>
-<span class="fc" id="L13">        this.project = project;</span>
-<span class="fc" id="L14">    }</span>
+<span class="nc" id="L12">    public StudentSynthesizer(Project project) {</span>
+<span class="nc" id="L13">        this.project = project;</span>
+<span class="nc" id="L14">    }</span>
 
 
     @Override
     public List &lt;String&gt; synthezise() throws SabanaResearchException {
 
-<span class="fc" id="L20">        resume = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L20">        resume = new ArrayList&lt;&gt;();</span>
 
         Duration d;
         String n;
 
-<span class="pc bpc" id="L25" title="1 of 2 branches missed.">        if (project.getStudents().isEmpty())</span>
+<span class="nc bnc" id="L25" title="All 2 branches missed.">        if (project.getStudents().isEmpty())</span>
 <span class="nc" id="L26">            throw new SabanaResearchException(SabanaResearchException.BAD_FORMED_SPROJECT);</span>
 
-<span class="fc bfc" id="L28" title="All 2 branches covered.">        for (Student s : project.getStudents()){</span>
-<span class="fc" id="L29">            d=s.getActivitiesDuration();</span>
-<span class="fc" id="L30">            n=s.getName();</span>
-<span class="fc" id="L31">            resume.add(&quot;Estudiante: &quot;+n+ &quot;, Duracion: &quot;+ d);</span>
+<span class="nc bnc" id="L28" title="All 2 branches missed.">        for (Student s : project.getStudents()){</span>
+<span class="nc" id="L29">            d=s.getActivitiesDuration();</span>
+<span class="nc" id="L30">            n=s.getName();</span>
+<span class="nc" id="L31">            resume.add(&quot;Estudiante: &quot;+n+ &quot;, Duracion: &quot;+ d);</span>
 
-<span class="fc" id="L33">        }</span>
+<span class="nc" id="L33">        }</span>
 
-<span class="fc bfc" id="L35" title="All 2 branches covered.">        for (String r : resume){</span>
-<span class="fc" id="L36">            System.out.println(r);</span>
-<span class="fc" id="L37">        }</span>
-
-<span class="fc" id="L39">        return resume;</span>
+<span class="nc" id="L35">        return resume;</span>
 
     }
 }

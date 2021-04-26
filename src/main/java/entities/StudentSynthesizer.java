@@ -32,10 +32,6 @@ public class StudentSynthesizer implements ISynthesizer{
 
         }
 
-        for (String r : resume){
-            System.out.println(r);
-        }
-
         return resume;
 
     }

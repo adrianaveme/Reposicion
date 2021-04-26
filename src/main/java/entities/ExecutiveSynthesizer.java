@@ -31,10 +31,6 @@ public class ExecutiveSynthesizer implements ISynthesizer{
             resume.add("Objetivo: "+obj+ ". Duracion: "+d);
         }
 
-        for (String r : resume){
-            System.out.print(r);
-        }
-
         return resume;
 
     }

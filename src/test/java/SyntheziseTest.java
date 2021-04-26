@@ -92,7 +92,7 @@ class SyntheziseTest {
     }
 
     @Test
-    @DisplayName("GIVEN A student without assignedActivities WHEN needed a summary THEN Get Sabana Reseaarch Exception")
+    @DisplayName("GIVEN A student without assignedActivities WHEN needed a summary THEN Get Sabana Research Exception")
     void shouldNotSyntheziseStudents() {
 
         List <Activity> assignedActivities = new ArrayList<>();

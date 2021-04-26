@@ -34,6 +34,11 @@ ExecutiveSyntheziser()
 
 ![image](https://user-images.githubusercontent.com/79488147/116018066-d47e6580-a606-11eb-9bbc-fbb75ab2e1ac.png)
 
+Diagrama de Clases
+
+![image](https://user-images.githubusercontent.com/79488147/116020165-60928c00-a60b-11eb-927a-7e19986c6afd.png)
+
+
 ## **3. Extendiendo**
 
 
@@ -96,7 +101,7 @@ Del punto 2 no habría que cambiar nada porque el método getDuration() de activ
 * summarize(StudentSyntheziser) displays resume as follows:
 ![image](https://user-images.githubusercontent.com/79488147/116015816-456e4f00-a600-11eb-8a4b-3f18707483ab.png)
 
-*nota:* Se agregaron dos excepciones a Sabana Research Exception para casos de estudantes.
+*nota:* Se agregaron dos excepciones a Sabana Research Exception para casos de estudiantes.
 
 
 ---
